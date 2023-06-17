@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
-import { async } from 'q';
+import * as phoneBookApi from 'services/api';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
