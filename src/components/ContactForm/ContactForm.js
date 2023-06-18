@@ -1,4 +1,4 @@
-import * as yup from '<yup';
+import * as yup from 'yup';
 import Notiflix from 'notiflix';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Label, ErrorText } from './ContactForm.styled';
@@ -27,6 +27,7 @@ const schema = yup.object().shape({
     )
     .required(),
 });
+
 const FormError = ({ name }) => {
   return (
     <ErrorMessage
@@ -35,6 +36,7 @@ const FormError = ({ name }) => {
     />
   );
 };
+
 const initialValues = {
   name: '',
   number: '',
@@ -50,14 +52,17 @@ const ContactForm = () => {
       name,
       number,
     };
+
     const currentName = name.toLowerCase();
     const matchName = contacts.some(
       ({ name }) => name.toLowerCase() === currentName
     );
+
     matchName
-      ? Notiflix.Notify.failure('${name} is already in contacts')
+      ? Notiflix.Notify.failure(`${name} is already in contacts`)
       : setContact(contact);
   };
+
   const handleSubmit = (values, { resetForm }) => {
     const { name, number } = values;
     addContact(name, number);
@@ -65,7 +70,7 @@ const ContactForm = () => {
   };
   return (
     <Formik
-      initialValues={initialValue}
+      initialValues={initialValues}
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
@@ -80,9 +85,11 @@ const ContactForm = () => {
           <Field name="number" type="tel" />
           <FormError name="number" />
         </Label>
+
         <button type="submit">Add contact</button>
       </Form>
     </Formik>
   );
 };
+
 export default ContactForm;

@@ -1,4 +1,4 @@
-import styled from 'styled-component';
+import styled from 'styled-components';
 
 export const Contacts = styled.ul`
   margin-right: auto;

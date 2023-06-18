@@ -6,10 +6,10 @@ export const fetch = async () => {
   return data;
 };
 export const post = async contact => {
-  const { data } = await axios.post('/contacts, contact');
+  const { data } = await axios.post('/contacts', contact);
   return data;
 };
 export const del = async id => {
-  const { data } = await axios.delete('/contacts/${id}');
+  const { data } = await axios.delete(`/contacts/${id}`);
   return data;
 };
