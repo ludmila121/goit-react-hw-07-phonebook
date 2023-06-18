@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ContactListItem from './ContactListItem';
+import ContactListItem from './ContactListItem/ContactListItem';
 import { Contacts } from './ContactList.styled';
 import { deleteContact } from '../../redux/contacts/contactsOperations';
 import { getVisibleContacts } from 'redux/contacts/contactsSelectors';
