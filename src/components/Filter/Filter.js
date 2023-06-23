@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFilter } from '../../redux/contacts/contactsAction';
-import { filter, getFilter } from '../../redux/contacts/contactsSelectors';
+import { getFilter } from '../../redux/contacts/contactsSelectors';
 
 export default function Filter() {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ export default function Filter() {
   return (
     <label>
       Find contacts by name
-      <input type="text" value={filter} onChange={setFilter} />
+      <input type="text" value={value} onChange={setFilter} />
     </label>
   );
 }
