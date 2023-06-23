@@ -5,7 +5,6 @@ import {
   fetchContacts,
   postContact,
 } from './contactsOperations';
-
 const initialState = {
   contacts: [],
   filter: '',
